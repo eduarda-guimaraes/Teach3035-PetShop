@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patinhas & Cia - Clientes</title>
+    <link rel="icon" type="image/png" href="assets/logo.png" sizes="512X512">
+    <link rel="stylesheet" href="./style.css"> 
+</head>
+<body>
+    <header>
+        <img src="assets/logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./clients.html">Clientes</a></li>
+                <li><a href="./store.html">Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="client-list">
+            <h1>Nossos Clientes Cadastrados</h1>
+            <p class="subtitle">Clique no card para ver o cadastro completo.</p>
+
+            <div class="cards-grid">
+                <div class="client-card" onclick="openModal('pet1')">
+                    <span class="pet-name">Max</span>
+                    <span class="service-date">05/11/2025</span>
+                </div>
+                
+                <div class="client-card" onclick="openModal('pet2')">
+                    <span class="pet-name">Miau</span>
+                    <span class="service-date">06/11/2025</span>
+                </div>
+
+                <div class="client-card" onclick="openModal('pet3')">
+                    <span class="pet-name">Lulu</span>
+                    <span class="service-date">08/11/2025</span>
+                </div>
+                
+                </div>
+        </section>
+
+        <div id="clientModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeModal()">&times;</span>
+                <h2>Detalhes do Cadastro</h2>
+                
+                <div id="modal-details">
+                    </div>
+
+            </div>
+        </div>
+        </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-contact">
+                <h4>Fale Conosco</h4>
+                <p>Rua das Patinhas Alegres, 123</p>
+                <p>Cidade Pet, UF</p>
+                <p>Telefone: (51) 99999-9999</p>
+                <p>Email: contato@patinhasecia.com.br</p>
+            </div>
+            <div class="footer-section footer-links">
+                <h4>Navegação</h4>
+                <a href="./index.html">Início</a>
+                <a href="./clients.html">Clientes Cadastrados</a>
+                <a href="./store.html">Nossa Loja</a>
+            </div>
+            <div class="footer-section footer-info">
+                <h4>Nosso Lema</h4>
+                <p>O pit stop oficial dos melhores amigos. 💖</p>
+                <p style="margin-top: 15px;">Horário de Funcionamento:</p>
+                <p>Segunda a Sábado, 8h às 18h.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Patinhas & Cia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
