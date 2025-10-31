@@ -263,62 +263,75 @@ input[type="submit"]:hover {
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 200;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    max-width: 100vw;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: max(12px, env(safe-area-inset-top))
+           max(12px, env(safe-area-inset-right))
+           max(12px, env(safe-area-inset-bottom))
+           max(12px, env(safe-area-inset-left));
+}
+
+.modal.open {
+  display: flex;
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    padding: 30px;
-    border: 5px solid var(--light-pink);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 15px;
-    position: relative;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    max-width: 100vw;
+  box-sizing: border-box;
+  background-color: #fefefe;
+  border: 5px solid var(--light-pink);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  width: clamp(280px, 92vw, 560px);
+  max-height: min(82vh, 680px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
 .modal-content h2 {
-    color: var(--moss-green);
-    border-bottom: 2px solid var(--light-pink);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  color: var(--moss-green);
+  border-bottom: 2px solid var(--light-pink);
+  padding-bottom: 10px;
+  margin: 0 0 16px 0;
 }
 
 .close-button {
-    color: var(--marine-blue);
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    line-height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  color: var(--marine-blue);
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: red;
-    text-decoration: none;
-    cursor: pointer;
+  color: red;
 }
 
 #modal-details p {
-    margin-bottom: 10px;
-    text-align: left;
+  margin-bottom: 10px;
+  text-align: left;
+  overflow-wrap: anywhere;
 }
 
 #modal-details strong {
-    color: var(--marine-blue);
+  color: var(--marine-blue);
 }
 
 @keyframes animatetop {
@@ -498,6 +511,15 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
   }
+  .modal-content {
+        width: 96vw;
+        max-height: 84vh;
+        padding: 18px;
+  }
+
+  .modal-content h2 {
+        font-size: 1.1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -533,6 +555,15 @@ footer {
         gap: 20px;
         padding-left: 0;
         padding-right: 0;
+  }
+  .modal-content {
+        width: 96vw;
+        max-height: 84vh;
+        padding: 18px;
+  }
+
+  .modal-content h2 {
+        font-size: 1.1rem;
   }
   .footer-content {
         flex-direction: column;
